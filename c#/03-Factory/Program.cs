@@ -1,16 +1,17 @@
 ﻿
 using _03_Factory;
 
-Console.WriteLine("***Starting****");
-
-var bMW1Builder = new BMW1Factory();
-Client client = new Client(bMW1Builder);
-client.CreateCar();
+Client client = new Client();
+var car1 = client.GetCar(CarType.BMW1);
+Console.WriteLine(car1);
 
 Console.WriteLine("********************");
 
-var bMW2Builder = new BMW2Factory();
-client.SetFactory(bMW2Builder);
-client.CreateCar();
+var car2 = client.GetCar(CarType.BMW2);
+Console.WriteLine(car2);
 
-Console.WriteLine("***Finishing****");
+public enum CarType
+{
+    BMW1,
+    BMW2
+}

@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Threading.Tasks;
+using _03_Factory.models.abstracts;
+using _03_Factory.models.concrete;
 
 namespace _03_Factory
 {
     public class Client
     {
-        private IFactory _Factory { get; set; }
-
-        public Client(IFactory Factory)
+        public Client()
         {
-            _Factory = Factory;
         }
 
-        public void SetFactory(IFactory Factory){
-            _Factory = Factory;
-        }
-
-        public void CreateCar()
+        public ICar GetCar(CarType carType)
         {
-            var car = _Factory.CreateCar();
-            Console.WriteLine(car);
+            var factory = new CarFactory();
+            return factory.CreateCar(carType);
         }
     }
+
 }
