@@ -13,8 +13,4 @@ namespace _03_Factory.models.abstracts
         string Model { get; set; }
         string Color { get; set; }
     }
-
-    
-
-    
 }

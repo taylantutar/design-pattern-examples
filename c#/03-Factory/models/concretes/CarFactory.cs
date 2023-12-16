@@ -3,7 +3,7 @@ using _03_Factory.models.abstracts;
 
 namespace _03_Factory.models.concrete
 {
-    public class CarFactory : IFactory
+    public class CarFactory
     {
         public ICar CreateCar(CarType carType)
         {
